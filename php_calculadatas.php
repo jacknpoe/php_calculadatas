@@ -11,10 +11,15 @@
 			header( "Content-Type: text/html; charset=ISO-8859-1", true);
 
 			$resultado = '';
-			$datainicial = 
+			$datainicial = date( "Y-m-d");
+			$datafinal = date( "Y-m-d");
 
 			if( isset( $_POST[ 'calcular']))
 			{
+				$datainicial = $_POST["datainicial"];
+				$datafinal = $_POST["datafinal"];
+				$diferenca = strtotime( $datafinal) - strtotime( $datainicial);
+				$resultado = strval( $diferenca / 86400) . " dias";
 				// mágica
 			}
 		?>
@@ -26,7 +31,7 @@
 			<p><input type="submit" name="calcular" value="Calcular"></p>
 		</form>
 
-		<br><p>Resultado: <?php echo $resultado; ?>%</p><br><br>
+		<br><p>Resultado: <?php echo $resultado; ?></p><br><br>
 		<p><a href="https://github.com/jacknpoe/php_calculadatas">Repositório no GitHub</a></p><br><br>
 		<form action="index.html" method="POST" style="border: 0px">
 			<p><input type="submit" name="voltar" value="Voltar"></p>
