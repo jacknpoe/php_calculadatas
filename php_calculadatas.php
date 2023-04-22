@@ -9,6 +9,7 @@
 	<body>
 		<?php
 			header( "Content-Type: text/html; charset=ISO-8859-1", true);
+			date_default_timezone_set ("America/Sao_Paulo");
 
 			$resultado = '';
 			$datainicial = date( "Y-m-d");
@@ -20,7 +21,6 @@
 				$datafinal = $_POST["datafinal"];
 				$diferenca = strtotime( $datafinal) - strtotime( $datainicial);
 				$resultado = strval( $diferenca / 86400) . " dias";
-				// mágica
 			}
 		?>
 		<h1>Cálculo da diferença entre duas datas<br></h1>
