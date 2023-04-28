@@ -26,7 +26,7 @@
 		<h1>Cálculo da diferença entre duas datas<br></h1>
 
 		<form action="php_calculadatas.php" method="POST" style="border: 0px">
-			<p>Data Inicial: <input type="date" name="datainicial" value="<?php echo $datainicial; ?>"></p>
+			<p>Data Inicial: <input type="date" name="datainicial" value="<?php echo $datainicial; ?>" autofocus></p>
 			<p>Data Final: <input type="date" name="datafinal" value="<?php echo $datafinal; ?>"></p>
 			<p><input type="submit" name="calcular" value="Calcular"></p>
 		</form>
